@@ -52,23 +52,7 @@ include("functions/dbh.php");
     <br><br>
 
 <label>Endereço: </label>
-    <select name="endereco">
-    <option value="selecione">Selecione</option>
-        <?php
-        
-        $sql = mysqli_query($con,"SELECT id_cliente, endereco FROM cliente");
-
-        while($row = $sql->fetch_assoc()){
-
-            $id = $row['id_cliente'];
-            $endereco = $row['endereco'];
-
-            echo "<option value='.$id.' name='cliente'>".$endereco."</option>";
-        }
-        
-        ?>
-
-    </select>
+    <input type="text" name="endereco"/>
 <br><br>
     <input type="submit" value="Cadastrar"/>
 

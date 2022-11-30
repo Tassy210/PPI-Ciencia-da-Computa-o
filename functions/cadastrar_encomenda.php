@@ -4,13 +4,12 @@ session_start();
 
 include("dbh.php");
 
-$nome = $_POST['nome'];
 $codigo = $_POST['code'];
 $origem = $_POST['origem'];
 $cliente = $_POST['cliente'];
 $endereco = $_POST['endereco'];
 
-$sql = mysqli_query($con, "INSERT INTO encomenda(nome, codigo, origem, id_cliente, endereco) VALUES ('$nome','$codigo','$origem','$cliente','$endreco')");
+$sql = mysqli_query($con, "INSERT INTO encomenda(codigo, origem, id_cliente, endereco) VALUES ('$codigo','$origem','$cliente','$endreco')");
 
 if($sql){
 

@@ -4,40 +4,45 @@
 </head>
 
 <body>
-
 <?php
 
 session_start();
 
-include('functions/dbh.php');
+include_once("functions/dbh.php");
 
-$id = $_GET['id_cliente'];
+$id = filter_input(INPUT_GET, 'id_cliente', FILTER_SANITIZE_NUMBER_INT);
 
-$sql = mysqli_query($con, "SELECT * FROM cliente WHERE id_cliente = $id");
+$resultado = mysqli_query($con, "SELECT * FROM cliente WHERE id_cliente = '$id'"); 
 
+while($row = $resultado->fetch_assoc()){
 
-while($dados = $sql->fetch_assoc()){
-  
-    $nome = $dados['nome'];
-    $cpf = $dados['cpf'];
+    $id = $row['id_cliente'];
+    $nome = $row['nome'];
+    $cpf = $row['cpf'];
+    $endereco = $row['endereco'];
 
-    
-    }
+   
+
+}
+
 
 
 ?>
 
-<form method="" action ="">
 
-<label>Nome do cliente</label>
-<input type = "text" name="nome" value=<?php echo $nome ?> />
-<br><br>
-<label>CPF do cliente</label>
-<input type = "text" name="cpf" />
+<form method="POST" action="functionos/update.php">
 
-<br><br>
-
-<input type = "submit" value="Cadastrar"/>
+    <label>Nome: </label>
+    <br>
+    <input type='text' value = <?php echo $nome;?> ></input>
+    <br><br>
+    <label>Endereço: </label>
+    <br>
+    <input type='text' value = <?php echo $endereco;?> ></input>
+    <br><br>
+    <label>CPF: </label>
+    <br>
+    <input type='text'value = <?php echo $cpf;?> ></input>
 
 </form>
 

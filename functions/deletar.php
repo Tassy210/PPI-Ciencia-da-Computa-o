@@ -4,9 +4,12 @@ session_start();
 
 include('dbh.php');
 
-$id = $_GET['id_cliente'];
+$id = filter_input(INPUT_GET, 'id_cliente', FILTER_SANITIZE_NUMBER_INT);
 
-$Cliente = mysqli_query($con, "DELETE FROM cliente WHERE `cliente`.`id_cliente` = $id");
+$sql = "DELETE FROM cliente WHERE id_cliente = '$id'";
 
+$resultado = mysqli_query($con,$sql);
+
+header('location: ../clientes.php');
 
 ?>

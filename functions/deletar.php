@@ -10,6 +10,6 @@ $sql = "DELETE FROM cliente WHERE id_cliente = '$id'";
 
 $resultado = mysqli_query($con,$sql);
 
-header('location: ../clientes.php');
+header('location: lista_cliente.php');
 
 ?>

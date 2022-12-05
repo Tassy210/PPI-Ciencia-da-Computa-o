@@ -1,31 +1,29 @@
-<?php
-
+<?php 
 session_start();
 
 include("dbh.php");
 
+
+$nome = $_POST['nome'];
 $codigo = $_POST['code'];
 $origem = $_POST['origem'];
+$tamanho = $_POST['tamanho'];
+$peso = $_POST['peso'];
 $cliente = $_POST['cliente'];
 $endereco = $_POST['endereco'];
 
-$sql = mysqli_query($con, "INSERT INTO encomenda(codigo, origem, id_cliente, endereco) VALUES ('$codigo','$origem','$cliente','$endreco')");
+$sql = "INSERT INTO encomenda(nome, codigo, origem, tamanho, peso, id_cliente, cliente_endereco) VALUES('$nome', '$codigo','$origem','$tamanho','$peso','$cliente','$endereco')";
 
-if($sql){
 
-    echo " <script language='javascript' type='text/javascrit'>
-    alert('Cadastro efetuado com sucesso!');window.location.href='../home.php'
-    </script>
-    ";
-    
-    } else {
-    echo "
-        <script language='javascript' type='text/javascrit'>
-        alert('Erro ao inserir registro');window.location.href='../cadastrar_cliente.php'
-         </script>
-    
-         ";
-    
+$resultado = mysqli_query($con, $sql); 
+
+if ($resultado) {
+
+header("location:../home.php");
+} else {
+echo "Deu merda
+
+     ";
 }
 
 ?>

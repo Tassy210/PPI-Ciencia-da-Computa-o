@@ -36,7 +36,7 @@ if(empty($nome) or empty($senha)){
 } else{
    
     $_SESSION['ERROS'] = "Email ou Senha incorretos";
-    header('location:login_adm.php');
+    header('../location:login_adm.php');
     
     }
 }

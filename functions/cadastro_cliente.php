@@ -15,11 +15,7 @@ $resultado = mysqli_query($con, $sql);
 
 if ($resultado) {
 
-echo " <script language='javascript' type='text/javascrit'>
-alert('Cadastro efetuado com sucesso!');window.location.href='../home.php'
-</script>
-";
-
+header("location:../home.php");
 } else {
 echo "
     <script language='javascript' type='text/javascrit'>

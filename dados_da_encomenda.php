@@ -54,7 +54,7 @@ while($row = $resultado->fetch_assoc()){
     echo '
     <ul class="list-group">
     <li class="list-group-item"> 
-    <h5>'.$nome.' <a class="btn-sm btn-primary"><i class="bi bi-pencil"></i></a> <a class="btn-sm btn-danger" href="functions/deletar_encomenda.php?id='.$id.'"><i class="bi bi-trash"></i></a></h5>
+    <h5>'.$nome.' <a class="btn-sm btn-primary" href="editar_encomenda.php?id='.$id.'"><i class="bi bi-pencil"></i></a> <a class="btn-sm btn-danger" href="functions/deletar_encomenda.php?id='.$id.'"><i class="bi bi-trash"></i></a></h5>
     <br> <b>Códgio da Encomenda: </b>'.$code.'
     <br> <b>Origem: </b>'.$origem.'
     <br> <b>Cliente: </b>'.$cliente.'

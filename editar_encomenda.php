@@ -98,13 +98,6 @@ while($row = $sql->fetch_assoc()){
 
 <br><br>
 
-<h6>Endereço do cliente: </h6>
-<div class="col-sm-3">
-<input type="text" class="form-control" id="endereco" name="endereco" value = "<?= $row['cliente_endereco']; ?>"/>
-</div>
-
-<br><br>
-
 <input class="btn btn-dark" type="submit" value="Enviar"/>
 
 </form>

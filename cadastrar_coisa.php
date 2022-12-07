@@ -90,11 +90,6 @@ include('functions/dbh.php');
 </select>
 </div>
 
-<br><br>
-<h6>Endereco: </h6>
-<div class="col-sm-3">
-<input type = "text" class="form-control"  name="endereco" />
-</div>
 
 <br><br>
 

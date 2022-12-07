@@ -16,10 +16,24 @@
 <center>
 
 <div class="container">
+
+<nav class="navbar" style="background-color: #56676b;">
+  <div class="container-fluid">
+  <h4  style="color: #FFF;">Cadastro de Clientes</h4>
+  <span class="navbar-text">
+        <a href='home.php' style="color: #fff;">Voltar</a>
+      </span>
+  </div>
+</nav>
+
+
+<br><br>
+
 <div class="card" style="background-color: #068a29;">
 
 <form method="POST" action ="functions/cadastro_cliente.php">
 
+<br>
 <h6>Nome do cliente: </h6>
 <div class="col-sm-3">
 <input type = "text" class="form-control" name="nome" />

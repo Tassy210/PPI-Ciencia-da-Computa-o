@@ -24,7 +24,13 @@
   </div>
 </nav>
 
+</div>
+
+</center>
+
 <br>
+
+<div class="container">
 
 <?php
 
@@ -37,21 +43,33 @@ $resultado = mysqli_query($con, "SELECT * FROM encomenda");
 
 while($row = $resultado->fetch_assoc()){
 
+    $id = $row['id'];
     $nome = $row['nome'];
     $code = $row['codigo'];
     $origem = $row['origem'];
-    $cliente = $row['id_cliente'];
+    $cliente = $row['cliente'];
     $endereco = $row['cliente_endereco'];
+
 
     echo '
     <ul class="list-group">
-    <li class="list-group-item">'. $nome . ' | '.$code. ' | '.$origem. ' | '.$cliente." <a class='btn-sm btn-primary'><i class='bi bi-pencil'></i></a> <a class='btn-sm btn-danger'><i class='bi bi-trash'></i></a></li> 
+    <li class="list-group-item"> 
+    <h5>'.$nome.' <a class="btn-sm btn-primary"><i class="bi bi-pencil"></i></a> <a class="btn-sm btn-danger" href="functions/deletar_encomenda.php?id='.$id.'"><i class="bi bi-trash"></i></a></h5>
+    <br> <b>Códgio da Encomenda: </b>'.$code.'
+    <br> <b>Origem: </b>'.$origem.'
+    <br> <b>Cliente: </b>'.$cliente.'
+    <br> <b>Endereço: </b>'.$endereco.'
+    </li> 
     </ul>
-    "; 
+    <br>
+    '; 
 
 }
 
-
-
-
 ?>
+
+</div>
+
+</body>
+
+</html>

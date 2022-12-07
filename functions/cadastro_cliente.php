@@ -15,7 +15,7 @@ $resultado = mysqli_query($con, $sql);
 
 if ($resultado) {
 
-header("location:../home.php");
+header("location:lista_cliente.php");
 } else {
 echo "
     <script language='javascript' type='text/javascrit'>
